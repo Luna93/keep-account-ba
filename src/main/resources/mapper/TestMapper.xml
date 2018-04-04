@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxy.account.mapper.TestMapper" >
+  <resultMap id="BaseResultMap" type="com.lxy.account.entity.TestEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="orderNo" property="orderNo" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="TINYINT" />
+    <result column="left_bit" property="leftBit" jdbcType="BIT" />
+    <result column="order_id" property="orderId" jdbcType="INTEGER" />
+    <result column="instrument_id" property="instrumentId" jdbcType="TINYINT" />
+    <result column="time_type" property="timeType" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="total_amount" property="totalAmount" jdbcType="INTEGER" />
+    <result column="is_delete" property="isDelete" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, user_id, type, left_bit, order_id,orderNo, instrument_id, time_type, name, price, total_amount, is_delete
+  </sql>
+  <select id="select" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from order_item
+  </select>
+  
+ 
+</mapper>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.lxy.account.request.UserInfoRequest;
 import com.lxy.account.service.LoginService;
+import com.lxy.account.vo.Result;
 
 /**
  * 用户登录授权
@@ -25,8 +26,10 @@ public class LoginController {
 	private LoginService loginService;
 	
 	@PostMapping("/miniapp-login")
-	public void login(UserInfoRequest request){
+	public Result login(UserInfoRequest request){
 		loginService.miniappLogin(request);
+		
+		return Result.ok();
 	}
 
 }

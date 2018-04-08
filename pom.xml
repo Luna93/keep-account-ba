@@ -55,6 +55,13 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		
+		<!-- 微信小程序Java SDK -->
+		<dependency>
+		    <groupId>com.github.binarywang</groupId>
+		    <artifactId>weixin-java-miniapp</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
        
 	</dependencies>
 

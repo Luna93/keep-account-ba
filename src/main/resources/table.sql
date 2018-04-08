@@ -6,6 +6,7 @@ CREATE TABLE `keep_daliy_flow` (
   `sub_type_name` varchar(255) DEFAULT NULL COMMENT '子类型备注',
   `amount` decimal(10,2) DEFAULT NULL COMMENT '金额',
   `remark` varchar(255) DEFAULT NULL COMMENT '备注',
+  `account_time` varchar(10) DEFAULT NULL COMMENT '消费时间:YYYY-MM-dd',
   `is_deleted` int(2) NOT NULL DEFAULT '0' COMMENT '0未删除 1已删除',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',

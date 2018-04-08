@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alibaba.fastjson.JSON;
 import com.lxy.account.entity.TestEntity;
 import com.lxy.account.service.TestService;
+import com.lxy.account.vo.Result;
 
 /**
  *
@@ -28,11 +29,12 @@ public class TestController {
 	private TestService testService;
 	
 	@RequestMapping("/test")
-	public void test(){
-		LOG.info("111");
-		TestEntity e = testService.select();
-		System.out.println(JSON.toJSON(e));
+	public Result test(String code){
+		LOG.info("code="+code);
+//		TestEntity e = testService.select();
+//		System.out.println(JSON.toJSON(e));
 		LOG.error("22");
+		return Result.ok().put("userId", "666").put("openId", "222");
 	}
 
 }

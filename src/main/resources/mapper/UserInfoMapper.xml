@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lxy.account.mapper.UserInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.lxy.account.entity.UserInfoEntity" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="app_id" property="appid" jdbcType="VARCHAR" />
+    <result column="open_id" property="openid" jdbcType="VARCHAR" />
+    <result column="union_id" property="unionid" jdbcType="VARCHAR" />
+    <result column="avatar_url" property="avatarurl" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="country" property="country" jdbcType="VARCHAR" />
+    <result column="gender" property="gender" jdbcType="INTEGER" />
+    <result column="language" property="language" jdbcType="VARCHAR" />
+    <result column="nick_name" property="nickname" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    id, app_id, open_id, union_id, avatar_url, city, country, gender, language, nick_name, 
+    province, create_time, update_time
+  </sql>
+  
+  <select id="selectByOpenId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_info
+    where open_id = #{openid,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+  <insert id="insert" parameterType="com.lxy.account.entity.UserInfoEntity" useGeneratedKeys="true" keyProperty="id">
+    insert into user_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      
+      <if test="appid != null" >
+        app_id,
+      </if>
+      <if test="openid != null" >
+        open_id,
+      </if>
+      <if test="unionid != null" >
+        union_id,
+      </if>
+      <if test="avatarurl != null" >
+        avatar_url,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="country != null" >
+        country,
+      </if>
+      <if test="gender != null" >
+        gender,
+      </if>
+      <if test="language != null" >
+        language,
+      </if>
+      <if test="nickname != null" >
+        nick_name,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+        create_time,
+        update_time
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="appid != null" >
+        #{appid,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null" >
+        #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="unionid != null" >
+        #{unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarurl != null" >
+        #{avatarurl,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="language != null" >
+        #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+       now(),now()
+    </trim>
+  </insert>
+  
+  <update id="updateById" parameterType="com.lxy.account.entity.UserInfoEntity" >
+    update user_info
+    <set >
+      <if test="appid != null" >
+        app_id = #{appid,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null" >
+        open_id = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="unionid != null" >
+        union_id = #{unionid,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarurl != null" >
+        avatar_url = #{avatarurl,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="gender != null" >
+        gender = #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="language != null" >
+        language = #{language,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        nick_name = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

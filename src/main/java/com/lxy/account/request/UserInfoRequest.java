@@ -3,7 +3,8 @@
  */
 package com.lxy.account.request;
 
-import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 /**
  *
@@ -14,19 +15,19 @@ public class UserInfoRequest {
 	 /**
      * 用户登录凭证
      */
-    @NotNull
+    @NotBlank(message = "jsCode不能为空")
     private String jsCode ="";
 
     /**
      * 微信公众号用户加密的用户数据
      */
-    @NotNull
+    @NotBlank(message = "encrypteData不能为空")
     private String encrypteData;
 
     /**
      * 加密字符串
      */
-    @NotNull
+    @NotBlank(message = "ivStr不能为空")
     private String ivStr;
 
 	/**

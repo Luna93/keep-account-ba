@@ -17,10 +17,25 @@ public class DayFlowVo {
     private String subTypeName;
 
     /** 金额*/
-    private BigDecimal amount;
+    private BigDecimal amount = new BigDecimal(0);
 
     /** 备注*/
     private String remark;
+    
+
+	public DayFlowVo() {
+		super();
+	}
+
+	public DayFlowVo(Integer type, Integer subType, String subTypeName,
+			BigDecimal amount, String remark) {
+		super();
+		this.type = type;
+		this.subType = subType;
+		this.subTypeName = subTypeName;
+		this.amount = amount;
+		this.remark = remark;
+	}
 
 	public Integer getType() {
 		return type;

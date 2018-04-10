@@ -3,6 +3,10 @@ package com.lxy.account.vo;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.google.common.collect.Lists;
+import com.lxy.account.entity.KeepDaliyFlowEntity;
+import com.lxy.account.utils.DateUtil;
+
 public class MonthFlowVo {
 
 	/**
@@ -18,17 +22,31 @@ public class MonthFlowVo {
 	/**
 	 * 当日总收入
 	 */
-	private BigDecimal dayTotalIncome;
+	private BigDecimal dayTotalIncome = new BigDecimal(0);
 
 	/**
 	 * 当日总支出
 	 */
-	private BigDecimal dayTotalExpend;
+	private BigDecimal dayTotalExpend = new BigDecimal(0);
 	
 	/**
 	 * 当日花费列表
 	 */
-	private List<DayFlowVo> dayList;
+	private List<DayFlowVo> dayList = Lists.newArrayList();;
+	
+	public MonthFlowVo sum(KeepDaliyFlowEntity e) {
+		if(1 == e.getType()){
+			this.dayTotalIncome = this.dayTotalIncome.add(e.getAmount());
+		} else {
+			this.dayTotalExpend = this.dayTotalExpend.add(e.getAmount());
+		}
+		this.dayList.add(new DayFlowVo(e.getType(), e.getSubType()
+				, e.getSubTypeName(), e.getAmount(), e.getRemark()));
+		String time = e.getAccountTime();
+		this.selectDay = time.substring(time.length()-2);
+		this.selectWeek = DateUtil.getDayWeek(time);
+		return this;
+	}
 
 	public String getSelectDay() {
 		return selectDay;

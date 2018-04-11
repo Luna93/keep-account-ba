@@ -40,8 +40,11 @@ public class MonthFlowVo {
 		} else {
 			this.dayTotalExpend = this.dayTotalExpend.add(e.getAmount());
 		}
+
 		this.dayList.add(new DayFlowVo(e.getType(), e.getSubType()
-				, e.getSubTypeName(), e.getAmount(), e.getRemark()));
+				, e.getSubTypeName(), e.getAmount(), e.getRemark(),DateUtil.formatDate(e.getCreateTime()),
+				DateUtil.formatDate(e.getUpdateTime())));
+		
 		String time = e.getAccountTime();
 		this.selectDay = time.substring(time.length()-2);
 		this.selectWeek = DateUtil.getDayWeek(time);

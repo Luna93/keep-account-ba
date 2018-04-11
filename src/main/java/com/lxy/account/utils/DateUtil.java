@@ -2,7 +2,6 @@ package com.lxy.account.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 public class DateUtil {
@@ -53,10 +52,20 @@ public class DateUtil {
 		}
 	}
 
+	public static String formatDate(Date date, String pattern) {
+		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+		
+		return sdf.format(date);
+	}
+	
+	public static String formatDate(Date date) {
+		return formatDate(date, YYYY_MM_DD_HH_MM_SS);
+	}
 
 	public static void main(String[] args) {
 		System.out.println(getDayWeek("2018-04-30"));
 		System.out.println("2018-04-01".substring("2018-04-30".length()-2));
+		System.out.println(formatDate(new Date()));
 	}
 
 }

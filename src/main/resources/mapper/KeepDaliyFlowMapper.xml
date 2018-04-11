@@ -26,7 +26,7 @@
     where user_id = #{userId,jdbcType=INTEGER}
     and account_time &gt;= #{accountTimeStart,jdbcType=VARCHAR}
     and account_time &lt;= #{accountTimeEnd,jdbcType=VARCHAR}
-    order by account_time desc ,create_time desc
+    order by account_time ,create_time 
   </select>
   
   <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >

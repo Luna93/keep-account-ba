@@ -22,21 +22,65 @@ public class DayFlowVo {
     /** 备注*/
     private String remark;
     
-
+    private String createTime;
+    
+    private String updateTime;
+    
 	public DayFlowVo() {
 		super();
 	}
 
-	public DayFlowVo(Integer type, Integer subType, String subTypeName,
-			BigDecimal amount, String remark) {
+	/**
+	 * @param type
+	 * @param subType
+	 * @param subTypeName
+	 * @param amount
+	 * @param remark
+	 * @param createTime
+	 * @param updateTime
+	 */
+	public DayFlowVo(Integer type, Integer subType, String subTypeName, BigDecimal amount, String remark,
+			String createTime, String updateTime) {
 		super();
 		this.type = type;
 		this.subType = subType;
 		this.subTypeName = subTypeName;
 		this.amount = amount;
 		this.remark = remark;
+		this.createTime = createTime;
+		this.updateTime = updateTime;
 	}
 
+
+
+
+	/**
+	 * @return the createTime
+	 */
+	public String getCreateTime() {
+		return createTime;
+	}
+
+	/**
+	 * @param createTime the createTime to set
+	 */
+	public void setCreateTime(String createTime) {
+		this.createTime = createTime;
+	}
+
+	/**
+	 * @return the updateTime
+	 */
+	public String getUpdateTime() {
+		return updateTime;
+	}
+
+	/**
+	 * @param updateTime the updateTime to set
+	 */
+	public void setUpdateTime(String updateTime) {
+		this.updateTime = updateTime;
+	}
 	public Integer getType() {
 		return type;
 	}

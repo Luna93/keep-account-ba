@@ -2337,3 +2337,36 @@ javax.validation.UnexpectedTypeException: HV000030: No validator could be found 
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.lang.Thread.run(Thread.java:748)
+2018-04-10 18:14:02 [INFO ] [com.lxy.account.Application.logStarting:48] |Starting Application on admin-PC with PID 11896 (D:\code\keep-account-ba\target\classes started by admin in D:\code\keep-account-ba)
+2018-04-10 18:14:02 [INFO ] [com.lxy.account.Application.logStartupProfileInfo:593] |No active profile set, falling back to default profiles: default
+2018-04-10 18:14:03 [INFO ] [org.hibernate.validator.internal.util.Version.<clinit>:30] |HV000001: Hibernate Validator 5.3.6.Final
+2018-04-10 18:14:07 [INFO ] [com.lxy.account.Application.logStarted:57] |Started Application in 5.688 seconds (JVM running for 6.115)
+2018-04-10 18:16:16 [INFO ] [com.lxy.account.Application.logStarting:48] |Starting Application on admin-PC with PID 12276 (D:\code\keep-account-ba\target\classes started by admin in D:\code\keep-account-ba)
+2018-04-10 18:16:16 [INFO ] [com.lxy.account.Application.logStartupProfileInfo:593] |No active profile set, falling back to default profiles: default
+2018-04-10 18:16:17 [INFO ] [org.hibernate.validator.internal.util.Version.<clinit>:30] |HV000001: Hibernate Validator 5.3.6.Final
+2018-04-10 18:16:23 [INFO ] [com.lxy.account.Application.logStarted:57] |Started Application in 6.883 seconds (JVM running for 7.472)
+2018-04-10 18:17:00 [INFO ] [com.lxy.account.controller.AccountController.save:57] |【列表查询】请求参数，request = {}
+2018-04-10 18:18:05 [INFO ] [com.lxy.account.controller.AccountController.save:57] |【列表查询】请求参数，request = {}
+2018-04-10 18:18:12 [INFO ] [com.lxy.account.controller.AccountController.save:57] |【列表查询】请求参数，request = {}
+2018-04-10 18:18:26 [INFO ] [com.lxy.account.controller.AccountController.save:57] |【列表查询】请求参数，request = {"selectDay":"'2018-04'","userId":168}
+2018-04-10 18:18:27 [ERROR] [com.lxy.account.controller.AccountController.save:65] |【列表查询】请求异常，error = org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.type.TypeException: Could not set parameters for mapping: ParameterMapping{property='accountTimeStart', mode=IN, javaType=class java.lang.Integer, jdbcType=VARCHAR, numericScale=null, resultMapId='null', jdbcTypeName='null', expression='null'}. Cause: org.apache.ibatis.type.TypeException: Error setting non null for parameter #2 with JdbcType VARCHAR . Try setting a different JdbcType for this parameter or a different configuration property. Cause: java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+2018-04-10 18:18:27 [INFO ] [com.lxy.account.controller.AccountController.save:68] |【列表查询】返回信息：{"msg":"系统异常","data":"","code":500}
+2018-04-10 18:19:56 [INFO ] [com.lxy.account.Application.logStarting:48] |Starting Application on admin-PC with PID 4056 (D:\code\keep-account-ba\target\classes started by admin in D:\code\keep-account-ba)
+2018-04-10 18:19:56 [INFO ] [com.lxy.account.Application.logStartupProfileInfo:593] |No active profile set, falling back to default profiles: default
+2018-04-10 18:19:56 [INFO ] [org.hibernate.validator.internal.util.Version.<clinit>:30] |HV000001: Hibernate Validator 5.3.6.Final
+2018-04-10 18:20:02 [INFO ] [com.lxy.account.Application.logStarted:57] |Started Application in 7.023 seconds (JVM running for 7.648)
+2018-04-10 18:20:17 [INFO ] [com.lxy.account.controller.AccountController.save:57] |【列表查询】请求参数，request = {"selectDay":"'2018-04'","userId":168}
+2018-04-10 18:20:18 [INFO ] [com.lxy.account.controller.AccountController.save:68] |【列表查询】返回信息：null
+2018-04-10 18:20:54 [INFO ] [com.lxy.account.controller.AccountController.save:57] |【列表查询】请求参数，request = {"selectDay":"'2018-04'","userId":168}
+2018-04-10 18:24:31 [INFO ] [com.lxy.account.Application.logStarting:48] |Starting Application on admin-PC with PID 11696 (D:\code\keep-account-ba\target\classes started by admin in D:\code\keep-account-ba)
+2018-04-10 18:24:31 [INFO ] [com.lxy.account.Application.logStartupProfileInfo:593] |No active profile set, falling back to default profiles: default
+2018-04-10 18:24:31 [INFO ] [org.hibernate.validator.internal.util.Version.<clinit>:30] |HV000001: Hibernate Validator 5.3.6.Final
+2018-04-10 18:24:37 [INFO ] [com.lxy.account.Application.logStarted:57] |Started Application in 6.901 seconds (JVM running for 7.473)
+2018-04-10 18:25:07 [INFO ] [com.lxy.account.controller.AccountController.save:57] |【列表查询】请求参数，request = {"selectDay":"'2018-04'","userId":168}
+2018-04-10 18:30:13 [INFO ] [com.lxy.account.controller.AccountController.save:68] |【列表查询】返回信息：null
+2018-04-10 18:30:27 [INFO ] [com.lxy.account.controller.AccountController.save:57] |【列表查询】请求参数，request = {"selectDay":"2018-04","userId":168}
+2018-04-10 18:30:30 [INFO ] [com.lxy.account.controller.AccountController.save:68] |【列表查询】返回信息：null
+2018-04-10 18:31:44 [INFO ] [com.lxy.account.controller.AccountController.save:57] |【列表查询】请求参数，request = {"selectDay":"2018-09","userId":168}
+2018-04-10 18:31:49 [INFO ] [com.lxy.account.controller.AccountController.save:68] |【列表查询】返回信息：null
+2018-04-10 18:32:08 [INFO ] [com.lxy.account.controller.AccountController.save:57] |【列表查询】请求参数，request = {"selectDay":"2016-09","userId":168}
+2018-04-10 18:32:08 [INFO ] [com.lxy.account.controller.AccountController.save:68] |【列表查询】返回信息：null

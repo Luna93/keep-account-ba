@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -51,15 +52,15 @@ public class AccountController {
 		
 	}
 	
-	@PostMapping("/list")
-	public Result save(@RequestBody @Valid AccountListRequest request, BindingResult bindingResult){
+	@GetMapping("/list")
+	public Result save(@Valid AccountListRequest request, BindingResult bindingResult){
 		log.info("【列表查询】请求参数，request = " +JSON.toJSON(request));
 		if (bindingResult.hasErrors()) {
 			return Result.error("参数错误:" + bindingResult.getFieldError().getDefaultMessage());
 		}
 		Result result = Result.ok();
 		try {
-			result = null;
+			result = accountService.list(request);
 		} catch (Exception e) {
 			log.error("【列表查询】请求异常，error = " + e);
 			result = Result.error("系统异常");

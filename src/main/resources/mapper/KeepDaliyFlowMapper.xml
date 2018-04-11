@@ -18,6 +18,17 @@
     id, user_id, type, sub_type, sub_type_name, amount, remark, account_time, is_deleted, 
     create_time, update_time
   </sql>
+  
+  <select id="selectByDate" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from keep_daliy_flow
+    where user_id = #{userId,jdbcType=INTEGER}
+    and account_time &gt;= #{accountTimeStart,jdbcType=VARCHAR}
+    and account_time &lt;= #{accountTimeEnd,jdbcType=VARCHAR}
+    order by account_time desc ,create_time desc
+  </select>
+  
   <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

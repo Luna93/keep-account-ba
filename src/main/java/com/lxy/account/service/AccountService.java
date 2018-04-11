@@ -3,13 +3,20 @@
  */
 package com.lxy.account.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lxy.account.entity.KeepDaliyFlowEntity;
 import com.lxy.account.entity.UserInfoEntity;
 import com.lxy.account.mapper.KeepDaliyFlowMapper;
+import com.lxy.account.request.AccountListRequest;
 import com.lxy.account.request.AccountRequest;
+import com.lxy.account.vo.DayFlowVo;
+import com.lxy.account.vo.MonthFlowVo;
+import com.lxy.account.vo.MonthListFlowVo;
 import com.lxy.account.vo.Result;
 
 /**
@@ -44,6 +51,20 @@ public class AccountService {
 		return Result.ok();
 	}
 	
+	public Result list(AccountListRequest request){
+		String accountTimeStart = request.getSelectDay() + "-01";
+		String accountTimeEnd = request.getSelectDay() + "-31";
+		System.out.println(accountTimeStart);
+		System.out.println(accountTimeEnd);
+		List<KeepDaliyFlowEntity> daliyFlowEntities = keepDaliyFlowMapper.selectByDate(request.getUserId(), accountTimeStart, accountTimeEnd);
+		MonthListFlowVo monthListFlowVo = new MonthListFlowVo();
+		List<MonthFlowVo> flowVos = new ArrayList<>();
+		List<DayFlowVo> dayList = new ArrayList<>();
+		DayFlowVo dayFlowVo = new DayFlowVo();
+		
+		return null;
+		
+	}
 	
 
 }

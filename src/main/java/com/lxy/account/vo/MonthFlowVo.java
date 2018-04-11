@@ -32,7 +32,25 @@ public class MonthFlowVo {
 	/**
 	 * 当日花费列表
 	 */
-	private List<DayFlowVo> dayList = Lists.newArrayList();;
+	private List<DayFlowVo> dayList = Lists.newArrayList();
+	  /**
+     * 页面展示时是否打开
+     */
+    private boolean open = false;
+    /**
+	 * @return the open
+	 */
+	public boolean isOpen() {
+		return open;
+	}
+
+	/**
+	 * @param open the open to set
+	 */
+	public void setOpen(boolean open) {
+		this.open = open;
+	}
+
 	
 	public MonthFlowVo sum(KeepDaliyFlowEntity e) {
 		if(1 == e.getType()){

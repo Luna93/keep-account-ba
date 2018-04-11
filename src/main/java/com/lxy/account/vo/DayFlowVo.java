@@ -52,8 +52,6 @@ public class DayFlowVo {
 	}
 
 
-
-
 	/**
 	 * @return the createTime
 	 */
